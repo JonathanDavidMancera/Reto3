@@ -21,16 +21,20 @@ public class ClientModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private Long idClient;
 
-    private String name;
     private String email;
     private String password;
+    private String name;
     private Long age;
 
     @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "client")
     @JsonIgnoreProperties("client")
     private List<MessageModel> messages;
+
+    @OneToMany(cascade = { CascadeType.PERSIST })
+    @JsonIgnoreProperties("client")
+    private List<ReservationModel> reservations;
 
     public List<MessageModel> getMessages() {
         return messages;
@@ -40,12 +44,20 @@ public class ClientModel implements Serializable {
         this.messages = messages;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdClient() {
+        return idClient;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdClient(Long idClient) {
+        this.idClient = idClient;
+    }
+
+    public List<ReservationModel> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<ReservationModel> reservations) {
+        this.reservations = reservations;
     }
 
     public String getName() {
