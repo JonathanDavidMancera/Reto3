@@ -34,11 +34,11 @@ public class MachineModel {
     @JsonIgnoreProperties("machines")
     private CategoryModel category;
 
-    @OneToMany(cascade = { CascadeType.PERSIST })
-    @JsonIgnoreProperties("machine")
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "machine")
+    @JsonIgnoreProperties({"machine", "client"})
     private List<MessageModel> messages;
 
-    @OneToMany(cascade = { CascadeType.PERSIST })
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "machine")
     @JsonIgnoreProperties("machine")
     private List<ReservationModel> reservations;
 

@@ -25,7 +25,7 @@ public class CategoryModel {
     private String name;
     private String description;
 
-    @OneToMany(cascade = { CascadeType.PERSIST })
+    @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "category")
     @JsonIgnoreProperties("category")
     private List<MachineModel> machines;
 

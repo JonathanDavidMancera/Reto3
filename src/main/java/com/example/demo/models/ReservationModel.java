@@ -28,7 +28,7 @@ public class ReservationModel {
 
     @ManyToOne
     @JoinColumn(name = "maquinaId")
-    @JsonIgnoreProperties({ "reservations", "messages" })
+    @JsonIgnoreProperties({ "reservations"})
     private MachineModel machine;
 
     @ManyToOne
