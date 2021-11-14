@@ -25,4 +25,13 @@ public class MachineService {
     public Optional<MachineModel> obtenerMaquinaPorId(Long id) {
         return machineRepository.findById(id);
     }
+
+    public boolean eliminarUsuario(Long id) {
+        try {
+            machineRepository.deleteById(id);
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
 }

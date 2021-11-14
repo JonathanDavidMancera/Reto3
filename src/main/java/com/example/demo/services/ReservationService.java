@@ -25,4 +25,13 @@ public class ReservationService {
     public Optional<ReservationModel> obtenerReservaPorId(Long id) {
         return reservationRepository.findById(id);
     }
+
+    public boolean eliminarUsuario(Long id) {
+        try {
+            reservationRepository.deleteById(id);
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
 }

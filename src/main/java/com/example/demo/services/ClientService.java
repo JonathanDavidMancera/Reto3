@@ -26,4 +26,13 @@ public class ClientService {
         return clientRepository.findById(id);
     }
 
+    public boolean eliminarUsuario(Long id) {
+        try {
+            clientRepository.deleteById(id);
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
+
 }

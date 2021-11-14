@@ -25,4 +25,13 @@ public class MessageService {
     public Optional<MessageModel> obtenerMensajePorId(Long id) {
         return messageRepository.findById(id);
     }
+
+    public boolean eliminarUsuario(Long id) {
+        try {
+            messageRepository.deleteById(id);
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
 }

@@ -25,4 +25,13 @@ public class CategoryService {
     public Optional<CategoryModel> obtenerPorId(Long id) {
         return categoryRepository.findById(id);
     }
+
+    public boolean eliminarUsuario(Long id) {
+        try {
+            categoryRepository.deleteById(id);
+            return true;
+        } catch (Exception err) {
+            return false;
+        }
+    }
 }
