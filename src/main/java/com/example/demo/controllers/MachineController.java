@@ -71,6 +71,7 @@ public class MachineController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public String eliminarPorId(@PathVariable("id")Long id) {
         boolean ok = this.machineService.eliminarUsuario(id);
 

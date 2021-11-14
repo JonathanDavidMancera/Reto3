@@ -51,6 +51,7 @@ public class MessageController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public String eliminarPorId(@PathVariable("id")Long id) {
         boolean ok = this.messageService.eliminarUsuario(id);
 
