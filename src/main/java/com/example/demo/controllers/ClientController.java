@@ -52,7 +52,7 @@ public class ClientController {
     }
 
     @DeleteMapping(path = "/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public String eliminarPorId(@PathVariable("id")Long id) {
         boolean ok = this.clientService.eliminarUsuario(id);
 

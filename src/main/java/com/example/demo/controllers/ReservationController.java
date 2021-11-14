@@ -51,7 +51,7 @@ public class ReservationController {
     }
 
     @DeleteMapping(path = "/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public String eliminarPorId(@PathVariable("id")Long id) {
         boolean ok = this.reservationService.eliminarUsuario(id);
 
